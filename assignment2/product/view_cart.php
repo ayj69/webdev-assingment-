@@ -67,7 +67,11 @@ require __DIR__ . '../../src/bootstrap.php';
 			foreach($tax_item as $key => $value){ //List all taxes
 				$list_tax .= $key. ' : '. $currency. sprintf("%01.2f", $value).'<br />';
 			}
-			$shipping_cost = (!empty($_SESSION["cart_products"]))?'Shipping Cost : '.$currency. sprintf("%01.2f", $shipping_cost).'<br />':"";
+			if (!empty($_SESSION["cart_products"])){
+				$shipping_cost = 'Shipping Cost : '.$currency. sprintf("%01.2f", $shipping_cost).'<br />'; 
+			}else{
+				$shipping_cost = "";
+			}
 			}
 			else{
 				redirect_to('/assignment2/login');
@@ -78,7 +82,7 @@ require __DIR__ . '../../src/bootstrap.php';
     <tr>
         <td colspan="5">
             <span style="float:right;text-align: right;">
-            <?php echo $shipping_cost. $list_tax; ?>Amount Payable : <?php echo sprintf("$%01.2f", $grand_total);?>
+            <?php echo $shipping_cost . $list_tax; ?>Amount Payable : <?php echo sprintf("$%01.2f", $grand_total);?>
             </span>
         </td>
     </tr>

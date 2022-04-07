@@ -5,7 +5,7 @@ require __DIR__ . '../../../src/bootstrap.php';
 
 
 $paypalmode = ($PayPalMode=='sandbox') ? '.sandbox' : '';
-if(isset($_SESSION["cart_products"])) //Post Data received from product list page.
+if(isset($_SESSION["cart_products"]) && !empty($_SESSION["cart_products"])) //Post Data received from product list page.
 {
 	//Other important variables like tax, shipping cost
 

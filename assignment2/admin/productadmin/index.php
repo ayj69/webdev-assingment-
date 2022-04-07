@@ -37,7 +37,6 @@ require __DIR__ . '/../../src/bootstrap.php';
 <html>
 <head>
 	<title>ADMIN PANEL</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body>
