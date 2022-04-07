@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 07, 2022 at 02:28 PM
+-- Generation Time: Apr 07, 2022 at 01:09 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -88,9 +88,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `is_admin`, `created
 (27, 'test445', 'test4@gmail.com', 'buster', 0, '2022-04-05 00:46:07', '2022-04-05 10:19:06'),
 (28, 'test5', 'test5@gmail.com', 'buster', 0, '2022-04-05 00:46:27', '2022-04-05 08:46:27'),
 (29, 'admin1', 'admin1@gmail.com', 'buster', 1, '2022-04-05 00:46:50', '2022-04-05 10:30:36'),
-(38, 'test1', 'test1@gmail.com', 'buster', 0, '2022-04-05 02:11:24', '2022-04-05 10:11:24'),
-(39, 'Bruh', 'bruh@gmail.com', '$2y$10$BetasWYyfy.SEF371qIPruT8mHtyftt.3d6nndX4Sw4KtRWwUae/G', 1, '2022-04-07 13:31:09', '2022-04-07 22:24:13'),
-(40, 'NotBruh', 'Badabing@gmai.com', '$2y$10$pCGHgYM1KWeDrjnABHtVY.LNbgVbBT7M76jL9yXsNBTF/ou9xpWDy', 0, '2022-04-07 14:27:19', '2022-04-07 22:27:19');
+(38, 'test1', 'test1@gmail.com', 'buster', 0, '2022-04-05 02:11:24', '2022-04-05 10:11:24');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

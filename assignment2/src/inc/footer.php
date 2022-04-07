@@ -9,19 +9,19 @@
 				<div class=footercontent1>
 					<ul>
 						<li><b>The Collection</b></li>
-						<a href="../product/index.php"><li>Series Nya</li></a>
-						<a href="../product/index.php"><li>The Siamese Catalouge</li></a>
-						<a href="../product/index.php"><li>Norwegian Forest</li></a>
-						<a href="../product/index.php"><li>Russian Blue</li></a>
+						<li>Series Nya</li>
+						<li>The Siamese Catalouge</li>
+						<li>Norwegian Forest</li>
+						<li>Russian Blue</li>
 					</ul>
 				</div>
 				<div class=footercontent2></div>
 					<ul>
-						<li><b>The Company</b></li>	
+						<li><b>The Company</b></li>
 					
-						<a href="../company/index.php#Story"><li>Our Story</li></a>
+						<a href="#Story"><li>Our Story</li></a>
 						
-						<a href="../company/index.php#Gallery"><li>The Gallery</li></a>
+						<a href="/assignment2/company#Gallery"><li>The Gallery</li></a>
 						
 					</ul>
 				<div class=footercontent3></div>
@@ -34,11 +34,11 @@
 					</ul>
 				<div class=footercontent4></div>
 					<ul>
-						<li><b>Home</b></li>
-						<a href="../home/index.php#Dream"><li>Our Vision</li></a>
-						<a href="../home/index.php#Highlight"><li>Highlights</li></a>
-						<a href="../home/index.php#service">	<li>Our Service</li></a>
-						
+						<li><b>Social Media</b></li>
+						<li>Facebook</li>
+						<li>Youtube</li>
+						<li>Twitter</li>
+						<li>Instargram</li>
 					</ul>
 			</div>
 			<div class=backtotop>
