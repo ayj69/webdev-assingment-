@@ -80,18 +80,13 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 -- Dumping data for table `users`
 --
+NSERT INTO `users` (`id`, `username`, `email`, `password`, `is_admin`, `created_at`, `updated_at`) VALUES
+(42, 'test2', 'test2@gmail.com', '$2y$10$q2TpKz5RCdlJxlnazMVZfeUiwQ0MnLo3iXRKNN2H2gWkJwTKW8Rva', 0, '2022-04-07 19:29:57', '2022-04-08 04:40:27'),
+(43, 'test3', 'test3@gmail.com', '$2y$10$ivTniBpI0Rr6RXSDt5d.Ae61lfs/n//jVVCvQ9/R4TPACPC/88zf2', 0, '2022-04-07 19:30:15', '2022-04-08 04:41:46'),
+(44, 'test4', 'test4@gmail.com', '$2y$10$JyV1fBY6SV3TocO4UEaAqOzcIm3nrrMM2EmFyKbFe6U5eK5vK2Clq', 0, '2022-04-07 19:30:32', '2022-04-08 04:41:47'),
+(45, 'test5', 'test5@gmail.com', '$2y$10$amXRB1mCPlXnL7Xviwgvf.ARWyuAkGZVxu27pR49Ic9gNOmstammG', 0, '2022-04-07 19:30:50', '2022-04-08 03:30:50'),
+(46, 'admin', 'admin@gmail.com', '$2y$10$9syX/jh0UmjQvz2vVEyhYuYsBPpjiNpf3Py3RD9JZ5g9NEoB3OJQy', 1, '2022-04-07 19:31:55', '2022-04-08 04:41:41');
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `is_admin`, `created_at`, `updated_at`) VALUES
-(22, 'sohai2000', 'angyongjie911@gmail.com', 'buster', 0, '2022-04-03 03:14:45', '2022-04-03 11:14:45'),
-(25, 'plsgod', 'test2@gmail.com', 'buster', 0, '2022-04-05 00:45:40', '2022-04-05 08:45:40'),
-(26, 'test6', 'test6@gmail.com', 'buster', 0, '2022-04-05 00:45:51', '2022-04-05 09:55:09'),
-(27, 'test445', 'test4@gmail.com', 'buster', 0, '2022-04-05 00:46:07', '2022-04-05 10:19:06'),
-(28, 'test5', 'test5@gmail.com', 'buster', 0, '2022-04-05 00:46:27', '2022-04-05 08:46:27'),
-(29, 'admin1', 'admin1@gmail.com', 'buster', 1, '2022-04-05 00:46:50', '2022-04-05 10:30:36'),
-(38, 'test1', 'test1@gmail.com', 'buster', 0, '2022-04-05 02:11:24', '2022-04-05 10:11:24'),
-(39, 'Bruh', 'bruh@gmail.com', '$2y$10$BetasWYyfy.SEF371qIPruT8mHtyftt.3d6nndX4Sw4KtRWwUae/G', 1, '2022-04-07 13:31:09', '2022-04-07 22:24:13'),
-(40, 'NotBruh', 'Badabing@gmai.com', '$2y$10$pCGHgYM1KWeDrjnABHtVY.LNbgVbBT7M76jL9yXsNBTF/ou9xpWDy', 0, '2022-04-07 14:27:19', '2022-04-07 22:27:19');
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
