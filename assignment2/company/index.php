@@ -8,7 +8,7 @@ require __DIR__ . '/../src/bootstrap.php';
 <?php view('nav') ?>
 
 
-<p>Welcome <?= current_user() ?> <a href="logout.php">Logout</a></p>
+<p>Welcome <?= current_user() ?> <a href="../logout/index.php">| Logout</a></p>
 
 
 <div class=maincontent>
@@ -19,7 +19,7 @@ require __DIR__ . '/../src/bootstrap.php';
 
 <div class="slideshow-container">
 
-	<!-- Full-width images with number and caption text -->
+	
 
 	<div class="mySlides">
 	  <div class="numbertext">1 / 4</div>
