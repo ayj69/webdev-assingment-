@@ -9,19 +9,19 @@
 				<div class=footercontent1>
 					<ul>
 						<li><b>The Collection</b></li>
-						<li>Series Nya</li>
-						<li>The Siamese Catalouge</li>
-						<li>Norwegian Forest</li>
-						<li>Russian Blue</li>
+						<a href="../product/index.php"><li>Series Nya</li></a>
+						<a href="../product/index.php"><li>The Siamese Catalouge</li></a>
+						<a href="../product/index.php"><li>Norwegian Forest</li></a>
+						<a href="../product/index.php"><li>Russian Blue</li></a>
 					</ul>
 				</div>
 				<div class=footercontent2></div>
 					<ul>
 						<li><b>The Company</b></li>
 					
-						<a href="#Story"><li>Our Story</li></a>
+						<a href="../company/index.php#Story"><li>Our Story</li></a>
 						
-						<a href="#Gallery"><li>The Gallery</li></a>
+						<a href="../company/index.php#Gallery"><li>The Gallery</li></a>
 						
 					</ul>
 				<div class=footercontent3></div>
