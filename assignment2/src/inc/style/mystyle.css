@@ -1013,22 +1013,26 @@ input[type=radio] {
   position: relative;
   padding: 1rem 1rem;
   margin-bottom: 1rem;
-  border-radius: var(--border-radius)
+  border-radius: var(--border-radius);
+  z-index: 19999999;
 }
 
 .alert-error {
   color: var(--error);
+  z-index: 19999999;
   background-color: var(--alert-error-bg)
 }
 
 .alert-warning {
   color: var(--warning);
+  z-index: 19999999;
   background-color: var(--alert-warning-bg)
 }
 
 .alert-info {
   color: var(--info);
-  background-color: var(--alert-info-bg)
+  background-color: var(--alert-info-bg);
+  z-index: 19999999;
 }
 
 .alert-success {

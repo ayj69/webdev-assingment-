@@ -9,8 +9,8 @@ $PayPalApiUsername 		= 'angyongjie911_api1.gmail.com'; //PayPal API Username
 $PayPalApiPassword 		= 'FQCC6NG7R2GGPYUB'; //Paypal API password
 $PayPalApiSignature 	= 'AndoiyBaSJMQU0x.LA1gzGhgCNPQAmV9gQZQ7U7Kj0RuSqbOWJKj8FSW'; //Paypal API Signature
 $PayPalCurrencyCode 	= 'USD'; //Paypal Currency Code
-$PayPalReturnURL 		= 'http://localhost/assignment/public/product/'; //Point to paypal-express-checkout page
-$PayPalCancelURL 		= 'http://localhost/assignment/public/product/'; //Cancel URL if user clicks cancel
+$PayPalReturnURL 		= 'http://localhost/assignment2/home/'; //Point to paypal-express-checkout page
+$PayPalCancelURL 		= 'http://localhost/assignment2/home/'; //Cancel URL if user clicks cancel
 
 //Additional taxes and fees											
 $HandalingCost 		= 0.00;  //Handling cost for the order.

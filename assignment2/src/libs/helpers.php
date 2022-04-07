@@ -88,6 +88,12 @@ function redirect_with_message(string $url, string $message, string $type = FLAS
     redirect_to($url);
 }
 
+function redirect_with_error_message(string $url, string $message, string $type = FLASH_ERROR)
+{
+    flash('flash_' . uniqid(), $message, $type);
+    redirect_to($url);
+}
+
 /**
  * Flash data specified by $keys from the $_SESSION
  * @param ...$keys

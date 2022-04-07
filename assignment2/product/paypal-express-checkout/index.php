@@ -1,10 +1,10 @@
 <?php
-session_start();
 include_once("../config.php");
 include_once("paypal.class.php");
+require __DIR__ . '../../../src/bootstrap.php';
+
 
 $paypalmode = ($PayPalMode=='sandbox') ? '.sandbox' : '';
-
 if(isset($_SESSION["cart_products"])) //Post Data received from product list page.
 {
 	//Other important variables like tax, shipping cost
@@ -20,23 +20,24 @@ if(isset($_SESSION["cart_products"])) //Post Data received from product list pag
         {
         $product_code 	= filter_var($cart_itm["product_code"], FILTER_SANITIZE_STRING); 
 		
-		$results = $mysqli->query("SELECT product_name, product_desc, price FROM products WHERE product_code='$product_code' LIMIT 1");
-		$obj = $results->fetch_object();
-		
-        $paypal_data .= '&L_PAYMENTREQUEST_0_NAME'.$i.'='.urlencode($obj->product_name);
+		$results = db()->query("SELECT product_name, product_desc, price FROM products WHERE product_code='$product_code' LIMIT 1");
+		$obj = $results->fetchall(PDO::FETCH_ASSOC);
+		$obj = $obj[0];
+		var_dump($obj);
+        $paypal_data .= '&L_PAYMENTREQUEST_0_NAME'.$i.'='.urlencode($obj['product_name']);
         $paypal_data .= '&L_PAYMENTREQUEST_0_NUMBER'.$i.'='.urlencode($cart_itm["product_code"]);
-        $paypal_data .= '&L_PAYMENTREQUEST_0_AMT'.$i.'='.urlencode($obj->price);		
+        $paypal_data .= '&L_PAYMENTREQUEST_0_AMT'.$i.'='.urlencode($obj['price']);		
 		$paypal_data .= '&L_PAYMENTREQUEST_0_QTY'.$i.'='. urlencode($cart_itm["product_qty"]);
         
 		// item price X quantity
-        $subtotal = ($obj->price*$cart_itm["product_qty"]);
+        $subtotal = ($obj['price']*$cart_itm["product_qty"]);
 		
         //total price
         $ItemTotalPrice = $ItemTotalPrice + $subtotal;
 		
 		//create items for session
-		$paypal_product['items'][] = array('itm_name'=>$obj->product_name,
-											'itm_price'=>$obj->price,
+		$paypal_product['items'][] = array('itm_name'=>$obj['product_name'],
+											'itm_price'=>$obj['price'],
 											'itm_code'=>$cart_itm["product_code"], 
 											'itm_qty'=>$cart_itm["product_qty"]
 											);
@@ -105,6 +106,8 @@ if(isset($_SESSION["cart_products"])) //Post Data received from product list pag
 			echo '</pre>';
 		}
 
+}else{
+	redirect_with_error_message('/assignment2/login',"ERROR,the cart is empty");
 }
 
 //Paypal redirects back to this page using ReturnURL, We should receive TOKEN and Payer ID
@@ -166,12 +169,17 @@ if(isset($_GET["token"]) && isset($_GET["PayerID"]))
 				
 				if('Completed' == $httpParsedResponseAr["PAYMENTINFO_0_PAYMENTSTATUS"])
 				{
+					
 					echo '<div style="color:green">Payment Received! Your product will be sent to you very soon!</div>';
+					unset($_SESSION['paypal_products']);
+
 				}
 				elseif('Pending' == $httpParsedResponseAr["PAYMENTINFO_0_PAYMENTSTATUS"])
 				{
 					echo '<div style="color:red">Transaction Complete, but payment is still pending! '.
 					'You need to manually authorize this payment in your <a target="_new" href="http://www.paypal.com">Paypal Account</a></div>';
+					unset($_SESSION['paypal_products']);
+
 				}
 
 				// we can retrive transection details using either GetTransactionDetails or GetExpressCheckoutDetails
@@ -179,7 +187,7 @@ if(isset($_GET["token"]) && isset($_GET["PayerID"]))
 				$padata = 	'&TOKEN='.urlencode($token);
 				$paypal= new MyPayPal();
 				$httpParsedResponseAr = $paypal->PPHttpPost('GetExpressCheckoutDetails', $padata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);
-
+				
 				if("SUCCESS" == strtoupper($httpParsedResponseAr["ACK"]) || "SUCCESSWITHWARNING" == strtoupper($httpParsedResponseAr["ACK"])) 
 				{
 					
@@ -217,7 +225,9 @@ if(isset($_GET["token"]) && isset($_GET["PayerID"]))
 					echo '<pre>';
 					print_r($httpParsedResponseAr);
 					echo '</pre>';
+					unset($_SESSION['paypal_products']);
 				} else  {
+					unset($_SESSION['paypal_products']);
 					echo '<div style="color:red"><b>GetTransactionDetails failed:</b>'.urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]).'</div>';
 					echo '<pre>';
 					print_r($httpParsedResponseAr);
@@ -226,6 +236,7 @@ if(isset($_GET["token"]) && isset($_GET["PayerID"]))
 				}
 	
 	}else{
+			unset($_SESSION['paypal_products']);
 			echo '<div style="color:red"><b>Error : </b>'.urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]).'</div>';
 			echo '<pre>';
 			print_r($httpParsedResponseAr);
