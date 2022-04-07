@@ -33,6 +33,7 @@ require __DIR__ . '/../../src/bootstrap.php';
 
 </head>
 <body>
+
     <?php if (isset($_SESSION['message'])): ?>
         <div class="msg">
             <?php 
@@ -52,7 +53,9 @@ require __DIR__ . '/../../src/bootstrap.php';
             <tr>
                 <th>Username</th>
                 <th>Email</th>
-                <th colspan="2">Action</th>
+                <th >Edit</th>
+                <th >Delete</th>
+                <th >Admin Access</th>
             </tr>
         </thead>
         
@@ -66,12 +69,31 @@ require __DIR__ . '/../../src/bootstrap.php';
                 <td>
                     <a href="../../src/userserver.php?del=<?php echo $row['id']; ?>" class="del_btn">Delete</a>
                 </td>
+                <td>
+                <a href="../../src/userserver.php?admin=<?php echo $row['id']; ?>" class="del_btn">Grant Admin Access
+
+                    <?php
+
+                    if($row['is_admin'] == 1){
+                        echo "<input type='checkbox' id='adminCheck' value='checked' checked  '>";
+                    }else{
+                        echo "<input type='checkbox' id='adminCheck' value='checked'  '>";
+                    }
+                    ?>
+     </a>
+
+                </td>
+
             </tr>
         <?php } ?>
     </table>
     </div>
     <div class="input-group">
-    <h1 class="page-title">Create User</h1>
+    <?php if ($update == true): ?>
+    <h1 class="page-title">Edit User</h1>
+    <?php else: ?>
+        <h1 class="page-title">Create User</h1>
+        <?php endif ?> 
 	<form method="post" action="../../src/userserver.php" >
         <input type="hidden" name="id" value="<?php echo $id; ?>">
 

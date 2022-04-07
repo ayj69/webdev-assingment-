@@ -11,6 +11,45 @@ require __DIR__ . '/bootstrap.php';
 	$email = "";
 	$id = 0;
 	$update = false;
+	$admin_access = 0;
+
+	if (isset($_GET['admin'])) {
+		$id = $_GET['admin'];
+
+		$statement = db()->query("SELECT * FROM users WHERE id=$id");
+		$results =  $statement->fetchall(PDO::FETCH_ASSOC);
+		$results = $results[0];
+		$statement->execute();
+
+		var_dump($results['is_admin']);
+		$is_admin = $results['is_admin'];
+
+		if($is_admin == 1){
+			$admin_access = 0;
+		}else{
+			$admin_access = 1;
+		}
+
+
+		$sql = 'UPDATE users SET is_admin = :is_admin WHERE id=:id';
+		$statement = db()->prepare($sql);
+	
+		$statement->bindValue(':is_admin', $admin_access, PDO::PARAM_INT);
+		$statement->bindValue(':id', $id, PDO::PARAM_INT);
+	
+		$statement->execute();
+	
+		if($is_admin == 1){
+			$_SESSION['message'] = "Access remove!"; 
+
+		}else{
+			$_SESSION['message'] = "Access updated!"; 
+
+		}
+	
+	
+		redirect_to('/assignment2/admin/useradmin/');
+	}
 
 	if (isset($_GET['del'])) {
 		$id = $_GET['del'];

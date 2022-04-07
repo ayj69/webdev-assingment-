@@ -64,7 +64,8 @@ require __DIR__ . '/../../src/bootstrap.php';
                 <th>Product Img Name</th>
                 <th>Product Description</th>
                 <th>Product Price</th>
-                <th colspan="2">Action</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         
@@ -86,7 +87,12 @@ require __DIR__ . '/../../src/bootstrap.php';
     </table>
     </div>
     <div class="input-group">
-    <h1 class="page-title">Create User</h1>
+    <?php if ($update == true): ?>
+    <h1 class="page-title">Edit Product</h1>
+    <?php else: ?>
+        <h1 class="page-title">Enter Product</h1>
+        <?php endif ?> 
+
 	<form method="post" action="../../src/productserver.php" >
         <input type="hidden" name="id" value="<?php echo $id; ?>">
 
