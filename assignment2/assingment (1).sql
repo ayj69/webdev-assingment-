@@ -1,32 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Generation Time: Apr 07, 2022 at 08:00 AM
--- Server version: 8.0.16
--- PHP Version: 7.4.26
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `assingment`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `products`
---
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -37,11 +9,9 @@ CREATE TABLE IF NOT EXISTS `products` (
   `price` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `product_code` (`product_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+)
 
---
--- Dumping data for table `products`
---
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO `products` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `price`) VALUES
 (1, 'PD1001', 'Android Phone FX1', 'Di sertakan secara rambang yang lansung tidak munasabah. Jika anda ingin menggunakan Lorem Ipsum, anda perlu memastikan bahwa tiada apa yang', 'android-phone.jpg', '200.50'),
@@ -49,11 +19,8 @@ INSERT INTO `products` (`id`, `product_code`, `product_name`, `product_desc`, `p
 (3, 'PD1003', 'External Hard Disk', 'Ada banyak versi dari mukasurat-mukasurat Lorem Ipsum yang sedia ada, tetapi kebanyakkannya telah diubahsuai, lawak jenaka diselitkan, atau ayat ayat yang', 'external-hard-disk.jpg', '100.00'),
 (4, 'PD1004', 'Wrist Watch GE2', 'Memalukan akan terselit didalam di tengah tengah kandungan text. Semua injin Lorem Ipsum didalam Internet hanya mengulangi text, sekaligus menjadikan injin kami sebagai yang terunggul dan tepat sekali di Internet.', 'wrist-watch.jpg', '400.30');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `users`
---
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
@@ -67,11 +34,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) 
 
---
--- Dumping data for table `users`
---
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `is_admin`, `created_at`, `updated_at`) VALUES
 (22, 'sohai2000', 'angyongjie911@gmail.com', '$2y$10$JTdUPQxzI0DbpRvlxZlmzezU0GguRwjs4JEgDvd96BZCZ1AlECmkq', 0, '2022-04-03 03:14:45', '2022-04-03 11:14:45'),
@@ -81,8 +46,5 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `is_admin`, `created
 (28, 'test5', 'test5@gmail.com', '$2y$10$wz5hjKUnHIZ.qH6IPTFOu.E6yDUPD3UKOVrL5mEbnpC5dRfIfGnW2', 0, '2022-04-05 00:46:27', '2022-04-05 08:46:27'),
 (29, 'admin1', 'admin1@gmail.com', '$2y$10$Fj9fuzuJsLBDTTu9UvRDzOZOUODfpzCrxzvDxIqHu6HkvdKplYkkS', 1, '2022-04-05 00:46:50', '2022-04-05 10:30:36'),
 (38, 'test1', 'test1@gmail.com', '$2y$10$UnV/H4PZj5Ly8VbyTMDDUujYFG64h8rif6SwNDNgmIrlwd06Rc/CW', 0, '2022-04-05 02:11:24', '2022-04-05 10:11:24');
-COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

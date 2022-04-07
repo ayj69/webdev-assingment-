@@ -7,8 +7,10 @@ require __DIR__ . '/../src/register.php';
 <?php view('header', ['title' => 'Register']) ?>
 <?php view('nav') ?>
 
-<form action="/assignment2/src/register.php" method="post">
-    
+
+<>
+<form action="index.php" method="post">
+
 
     <div>
         <label for="username">Username:</label>
@@ -50,7 +52,7 @@ require __DIR__ . '/../src/register.php';
 
     <button type="submit">Register</button>
 
-    <footer>Already a member? <a href="../login/index.php">Login here</a></footer>
+    <footer>Already a member? <a href="/assignment2/login">Login here</a></footer>
 
 </form>
 
