@@ -8,7 +8,6 @@ require __DIR__ . '/../src/bootstrap.php';
 <?php view('nav') ?>
 
 
-<p>Welcome <?= current_user() ?> <a href="../logout/index.php">| Logout</a></p>
 
 
 <div class=maincontent>

@@ -7,19 +7,11 @@ require __DIR__ . '/../src/bootstrap.php';
 <a id="Dream"></a>
 <?php view('nav') ?>
 
-<?php
 
-if (is_user_logged_in())
-{
-    echo "<p>Welcome " .  current_user()  ." "."|"." ". "<a href='../logout/index.php'>Logout</a></p>    ";
-    if (is_user_admin()){
-        echo "<p>this account is an admin account</p>";
-    }
-    
-}
 
-?>
-<h1 class="page-title">Home</h1>
+
+<h1 class="page-title">HomePage</h1>
+
 
 
 <section class="top-row">
