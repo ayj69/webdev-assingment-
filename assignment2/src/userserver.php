@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/bootstrap.php';
+require __DIR__ . '/../src/bootstrap.php';
 
 ?>
 
@@ -25,7 +25,7 @@ require __DIR__ . '/bootstrap.php';
 		$statement->execute();
 		$_SESSION['message'] = "Account deleted!"; 
 	
-		redirect_to('/assignment2/admin/useradmin/');
+		redirect_to('useradmin.php');
 	}
 	
 	
@@ -46,7 +46,7 @@ require __DIR__ . '/bootstrap.php';
 	
 	
 		$_SESSION['message'] = "Account updated!"; 
-		redirect_to('/assignment2/admin/useradmin/');
+		redirect_to('useradmin.php');
 	}
 	if (isset($_POST['save'])) {
 	
@@ -56,7 +56,7 @@ require __DIR__ . '/bootstrap.php';
 		register_user($email, $username, $username, false);
 	
 		$_SESSION['message'] = "Account created"; 
-		redirect_to('/assignment2/admin/useradmin/');
+		redirect_to('useradmin.php');
 	}
 	
 // ...

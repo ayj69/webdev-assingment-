@@ -11,7 +11,7 @@ require __DIR__ . '/../../src/bootstrap.php';
     $product_code = "";
 	$product_name = "";
     $product_img_name = "";
-    $product_desc = "Enter product description here...";
+    $product_desc = "";
     $price = "";
 	$id = 0;
 	$update = false;
@@ -40,8 +40,6 @@ require __DIR__ . '/../../src/bootstrap.php';
 
 </head>
 <body>
-
-
     <?php if (isset($_SESSION['message'])): ?>
         <div class="msg">
             <?php 
@@ -54,16 +52,16 @@ require __DIR__ . '/../../src/bootstrap.php';
 		$statement = db()->query("SELECT * FROM products");
 		$results =  $statement->fetchall(PDO::FETCH_ASSOC);	
 	?>
-    <div class="admin-table">
+    
     <h1 class="page-title">Manage Product</h1>
-    <table >
+    <table>
         <thead>
             <tr>
-                <th>Product Name</th>
-                <th>Product Code</th>
-                <th>Product Img Name</th>
-                <th>Product Description</th>
-                <th>Product Price</th>
+                <th>product name</th>
+                <th>product code</th>
+                <th>product img name</th>
+                <th>product description</th>
+                <th>product price</th>
                 <th colspan="2">Action</th>
             </tr>
         </thead>
@@ -73,53 +71,52 @@ require __DIR__ . '/../../src/bootstrap.php';
                 <td><?php echo $row['product_code']; ?></td>
                 <td><?php echo $row['product_name']; ?></td>
                 <td><?php echo $row['product_img_name']; ?></td>
-                <td><?php echo ellipsify($row['product_desc']); ?></td>
+                <td><?php echo $row['product_desc']; ?></td>
                 <td><?php echo $row['price']; ?></td>
                 <td>
-                    <a href="index.php?edit=<?php echo $row['id']; ?>" class="edit_btn" >Edit</a>
+                    <a href="productadmin.php?edit=<?php echo $row['id']; ?>" class="edit_btn" >Edit</a>
                 </td>
                 <td>
-                    <a href="../../src/productserver.php?del=<?php echo $row['id']; ?>" class="del_btn">Delete</a>
+                    <a href="productserver.php?del=<?php echo $row['id']; ?>" class="del_btn">Delete</a>
                 </td>
             </tr>
         <?php } ?>
     </table>
-    </div>
-    <div class="input-group">
-    <h1 class="page-title">Create User</h1>
-	<form method="post" action="../../src/productserver.php" >
+
+	<form method="post" action="productserver.php" >
         <input type="hidden" name="id" value="<?php echo $id; ?>">
 
-             <div class="input-field">
-                 <label>Product Code</label>
+             <div class="input-group">
+                 <label>product code</label>
                  <input type="text" name="product_code" value="<?php echo $product_code; ?>">
              </div>
-             <div class="input-field">
-                <label>Product Name</label>
+             <div class="input-group">
+                <label>product name</label>
                 <input type="text" name="product_name" value="<?php echo $product_name; ?>">
             </div>
-            <div class="input-field">
-                 <label>Product Img Name</label>
+            <div class="input-group">
+                 <label>product img name</label>
                  <input type="text" name="product_img_name" value="<?php echo $product_img_name; ?>">
              </div>
-             <div class="input-field">
-                 <label>Product Price</label>
+             <div class="input-group">
+                 <label>product price</label>
                  <input type="text" name="price" value="<?php echo $price; ?>">
              </div>
-             <div class="input-field">
-                 <label>Product Description</label>
-                 <textarea name="product_desc" rows="5" cols="70" style="margin-left:300px;margin-right:300px;align-items: center;
-"><?php echo $product_desc; ?></textarea><br>
+             <div class="input-group">
+                 <label>product description</label>
+                 <textarea name="product_desc">Enter product description here...</textarea><br>
              </div>
-             <div class="input-field">
+             <div class="input-group">
              <?php if ($update == true): ?>
-            	<button class="btn" type="submit" name="update" style="background: #556B2F;" >Update</button>
+            	<button class="btn" type="submit" name="update" style="background: #556B2F;" >update</button>
             <?php else: ?>
             	<button class="btn" type="submit" name="save" >Save</button>
              <?php endif ?>          
                </div>
          </form>
-        </div>
+
+         <hr>
+
 
 
 

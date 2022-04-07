@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/bootstrap.php';
+require __DIR__ . '/../../src/bootstrap.php';
 
 ?>
 
@@ -28,7 +28,7 @@ require __DIR__ . '/bootstrap.php';
 		$statement->execute();
 		$_SESSION['message'] = "Product deleted!"; 
 	
-		redirect_to('/assignment2/admin/productadmin/');
+		redirect_to('productadmin.php');
 	}
 	
 	
@@ -56,7 +56,7 @@ require __DIR__ . '/bootstrap.php';
 	
 	
 		$_SESSION['message'] = "Product updated!"; 
-		redirect_to('/assignment2/admin/productadmin/');
+		redirect_to('productadmin.php');
 	}
 	if (isset($_POST['save'])) {
 	
@@ -85,7 +85,7 @@ require __DIR__ . '/bootstrap.php';
 
 	
 		$_SESSION['message'] = "Product created"; 
-		redirect_to('/assignment2/admin/productadmin/');
+		redirect_to('productadmin.php');
 	}
 	
 // ...

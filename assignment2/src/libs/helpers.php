@@ -112,12 +112,3 @@ function session_flash(...$keys): array
     }
     return $data;
 }
-
-function ellipsify(string $str): string {
-    if (strlen($str) > 40) {
-        return (substr($str,0,40) . "...");
-    }
-    else {
-        return $str;
-    }
-}
