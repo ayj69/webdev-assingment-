@@ -1,19 +1,21 @@
+
+
 <?php
 
 require __DIR__ . '/../src/bootstrap.php';
 require __DIR__ . '/../src/login.php';
-
-
-
 ?>
 
+
 <?php view('header', ['title' => 'Login']) ?>
-<?php view('nav') ?>
+<?php view('nav'); ?>
+
 
 <?php if (isset($errors['login'])) : ?>
     <div class="alert alert-error">
         <?= $errors['login'] ?>
     </div>
+    
 <?php endif ?>
     <div class="login-form">
     <form  action="index.php" method="post">

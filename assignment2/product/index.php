@@ -17,13 +17,11 @@ require __DIR__ . '../../src/bootstrap.php';
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Shopping Cart</title>
-<a id=watches></a>
 
 </head>
 <body>
 
-<h1 class="page-title"> Our Products </h1>
-
+<h1 class="page-title">Products </h1>
 
 <!-- View Cart Box Start -->
 <?php

@@ -108,7 +108,6 @@ p{
 
 .page-title{
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
 
 
 }
@@ -772,12 +771,102 @@ padding-bottom: 0px;
 
 
 
+.register{
+  height: 500x;
+  position: relative;
+	background: #eee;
+  width: 45%;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px; 
+  border: 1px solid #bbbbbb; 
+  border-radius: 5px;
+}
 
 
 
+.register h1{
+  text-align:center;
+    position:relative;
+    font-family: Arial, Helvetica, sans-serif;
+    top:40%;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    color: #565656;   
+    margin:0px;
+}
+
+.register label{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size : 1.25em;
+  align-items: center;  
+  display: inline-block;
+  color:#565656;
+	height: 50%;
+  width: 45%;
+  margin: auto;
+  margin: 10px;
+  align-items: center;
+  font-size: large;
+}
+
+.argee-container p{
+  align-content: center;
+  margin: auto;
+  text-align: center;
+
+
+}
+
+.register .argee{
+	width: 30px;
+	height: 30px;
+	background: #f2f3f4;
+  box-sizing: border-box;
+	justify-content: center;
+	display: flex;
+  margin: auto;
+  float: left;
+	padding: 10px;
+  border-color: #76323f75;
+
+}
+
+.register input{
+	width: 55%;
+	height: 40px;
+	background: #f2f3f4;
+  box-sizing: border-box;
+	justify-content: center;
+	display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+	padding: 10px;
+  border-color: #76323f75;
+
+}
 
 
 
+.register button{
+	width: 45%;
+	height: 40px;
+  margin-top: 50px;
+	margin: 30px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #c09f80;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+
+}
+.login-form button:hover{
+	background: #c09f80;
+}
 
 
 
@@ -841,19 +930,7 @@ label {
   width: 100%
 }
 
-input,
-select,
-textarea {
-  background-color: var(--input-background-color);
-  color: var(--input-text-color);
-  border: 1px solid var(--input-border-color);
-  border-radius: var(--border-radius);
-  display: inline-block;
-  padding: .5rem .75rem;
-  width: 100%;
-  font-family: inherit;
-  font-size: 1rem
-}
+
 
 input::placeholder {
   color: var(--input-placeholder-color)
@@ -898,56 +975,6 @@ textarea.success:focus {
   box-shadow: 0 0 0 .25rem rgb(25 135 84 / 25%)
 }
 
-a em,
-a i,
-button {
-  display: inline-block;
-  background: var(--primary);
-  color: var(--button-text);
-  border: 1px solid var(--primary);
-  border-radius: var(--border-radius);
-  font-size: 1em;
-  font-weight: 400;
-  text-align: center;
-  padding: .5em .75em;
-  min-width: 10ch;
-  user-select: none;
-  font-style: normal;
-  text-decoration: none;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
-}
-
-a em:hover,
-a i:hover,
-button:hover {
-  background: var(--secondary);
-  border-color: var(--border-color);
-  cursor: pointer
-}
-
-a em:focus,
-a i:focus,
-button:focus {
-  outline: 0;
-  color: var(--button-text);
-  background-color: var(--secondary);
-  border-color: var(--border-color);
-  box-shadow: var(--button-focus)
-}
-
-a em,
-button[type=button] {
-  background-color: #fff;
-  color: var(--primary);
-  border-color: var(--primary)
-}
-
-a em:hover,
-button[type=button]:hover {
-  background: var(--secondary);
-  color: var(--button-text);
-  cursor: pointer
-}
 
 form>button {
   display: block;
@@ -1006,6 +1033,44 @@ input[type=radio] {
 
 .alert-success {
   color: var(--success);
-  background-color: var(--alert-success-bg)
+  background-color: var(--alert-success-bg);
+  z-index: 19999999;
 }
 
+table {
+  border-spacing: 0;
+  display: block;
+  overflow-x: auto;
+  text-align: left;
+  width: 100%
+}
+
+td,
+th {
+  border-bottom: .1rem solid #e1e1e1;
+  padding: 1.2rem 1.5rem
+}
+
+td:first-child,
+th:first-child {
+  padding-left: 0
+}
+
+td:last-child,
+th:last-child {
+  padding-right: 0
+}
+
+@media (min-width:40rem) {
+  table {
+      display: table;
+      overflow-x: initial
+  }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
