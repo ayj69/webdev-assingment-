@@ -76,7 +76,7 @@ require __DIR__ . '/../src/bootstrap.php';
 
 <section class="bottom-row">
 <div class="bottom-left-column">
-    <img    src="Cat.jpg">
+    <img    src="cateyecrop.jpg">
     </div>
     <div class="bottom-right-column">
     <h2 class="page-title">You Want It. You Got It</h2>

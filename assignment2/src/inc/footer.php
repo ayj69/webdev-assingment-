@@ -27,10 +27,8 @@
 				<div class=footercontent3></div>
 					<ul>
 						<li><b>Retail & Service</b></li>
-						<li>Store Location</li>
-						<li>Instucruction for use</li>
-						<li>Maintainance</li>
-						<li>FAQ</li>
+						<a href="/assignment2/retail/index.php#Map"><li>Store Location</li></a>
+						<a href="/assignment2/retail/index.php#Faq"><li>FAQ</li></a>
 					</ul>
 				<div class=footercontent4></div>
 					<ul>
